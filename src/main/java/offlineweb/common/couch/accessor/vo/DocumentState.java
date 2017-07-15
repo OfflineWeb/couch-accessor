@@ -23,18 +23,18 @@
  *   THE SOFTWARE.
  *
  */
+package offlineweb.common.couch.accessor.vo;
 
-package offlineweb.common.couch.accessor;
-
-import offlineweb.common.persistence.intf.QueryIntf;
+import java.io.Serializable;
 
 /**
+ * Current state of a document
  * @author papa
- *         created on 7/13/17.
+ *         created on 7/14/17.
  */
-public class CouchQuery<T> implements QueryIntf<T> {
-    @Override
-    public T getQuery() {
-        return null;
-    }
+public enum DocumentState implements Serializable {
+    CLEAN,      /* the content is a copy of latest version found in source */
+    DIRTY,      /* the content needs update or marked for update */
+    WIP         /* the content is being updated */
+
 }

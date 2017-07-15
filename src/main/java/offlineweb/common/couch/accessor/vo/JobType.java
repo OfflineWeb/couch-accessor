@@ -24,17 +24,17 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.accessor.vo;
 
-import offlineweb.common.persistence.intf.QueryIntf;
+import java.io.Serializable;
 
 /**
+ * Type of the job
  * @author papa
  *         created on 7/13/17.
  */
-public class CouchQuery<T> implements QueryIntf<T> {
-    @Override
-    public T getQuery() {
-        return null;
-    }
+public enum JobType implements Serializable {
+    ALL,        /* all, new and old contents from a source */
+    REFRESH,    /* new content from a source */
+    ERROR       /* only contents that threw an error */
 }

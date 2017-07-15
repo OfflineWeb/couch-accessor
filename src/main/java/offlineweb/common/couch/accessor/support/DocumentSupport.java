@@ -24,17 +24,18 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.accessor.support;
 
-import offlineweb.common.persistence.intf.QueryIntf;
+import offlineweb.common.couch.accessor.vo.Document;
+import org.ektorp.CouchDbConnector;
+import org.ektorp.support.CouchDbRepositorySupport;
 
 /**
  * @author papa
- *         created on 7/13/17.
+ *         created on 7/15/17.
  */
-public class CouchQuery<T> implements QueryIntf<T> {
-    @Override
-    public T getQuery() {
-        return null;
+public class DocumentSupport extends CouchDbRepositorySupport<Document>{
+    protected DocumentSupport(Class<Document> type, CouchDbConnector db) {
+        super(type, db);
     }
 }

@@ -24,17 +24,17 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.accessor.vo;
 
-import offlineweb.common.persistence.intf.QueryIntf;
+import java.io.Serializable;
 
 /**
+ * Original source of the document
  * @author papa
  *         created on 7/13/17.
  */
-public class CouchQuery<T> implements QueryIntf<T> {
-    @Override
-    public T getQuery() {
-        return null;
-    }
+public enum DocumentSource implements Serializable {
+    WIKIPEDIA,  /* wikipedia pages */
+    GUTENBERG,  /* gutenberg pages */
+    YOUTUBE     /* youtube videos */
 }
