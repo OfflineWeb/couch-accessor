@@ -44,10 +44,10 @@ public class JobSummary  extends CouchDbDocument {
     @JsonProperty("job")
     private String jobId;            /* job id associated with the job  */
 
-    @JsonProperty("sdate")
+    @JsonProperty("stime")
     private Date startTime;          /* start date for the job */
 
-    @JsonProperty("ndate")
+    @JsonProperty("ntime")
     private Date snapTime;           /* last time a snapshot is created, 3 seconds interval */
 
     @JsonProperty("tasks")

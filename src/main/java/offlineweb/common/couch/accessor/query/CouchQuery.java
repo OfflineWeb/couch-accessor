@@ -24,7 +24,7 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.accessor.query;
 
 import offlineweb.common.persistence.intf.QueryIntf;
 

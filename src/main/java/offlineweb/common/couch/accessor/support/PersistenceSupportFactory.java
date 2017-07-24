@@ -58,7 +58,7 @@ public class PersistenceSupportFactory {
      * @throws ClassNotFoundException
      * @throws NoSuchMethodException
      */
-    public static CouchDbRepositorySupport getDBSupport(Class clazz)
+    public CouchDbRepositorySupport getDBSupport(Class clazz)
             throws ClassNotFoundException, NoSuchMethodException,
             IllegalAccessException, InvocationTargetException, InstantiationException {
         ConnectionManager connectionManager = new ConnectionManager();

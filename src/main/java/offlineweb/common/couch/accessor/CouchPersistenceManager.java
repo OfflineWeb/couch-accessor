@@ -26,11 +26,17 @@
 
 package offlineweb.common.couch.accessor;
 
+import offlineweb.common.couch.accessor.support.ConnectionManager;
+import offlineweb.common.couch.accessor.support.PersistenceSupportFactory;
 import offlineweb.common.logger.annotations.Loggable;
 import offlineweb.common.persistence.intf.PersistenceException;
 import offlineweb.common.persistence.intf.PersistenceManager;
 import offlineweb.common.persistence.intf.QueryIntf;
+import org.ektorp.CouchDbConnector;
+import org.ektorp.PageRequest;
+import org.ektorp.support.CouchDbRepositorySupport;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 /**
@@ -41,16 +47,14 @@ import java.util.List;
 @Loggable
 public class CouchPersistenceManager implements PersistenceManager {
 
-
-
     @Override
     public <T> List<T> findAll(Class<T> clazz) throws PersistenceException {
-        return null;
+        return (List<T>) getDbSupport(clazz).getAll();
     }
 
     @Override
     public <T, M> T findById(Class<T> clazz, M id) throws PersistenceException {
-        return null;
+        return (T) getDbSupport(clazz).get((String) id);
     }
 
     @Override
@@ -71,5 +75,17 @@ public class CouchPersistenceManager implements PersistenceManager {
     @Override
     public <M> void execute(QueryIntf<M> query) throws PersistenceException {
 
+    }
+
+    private <T> CouchDbRepositorySupport getDbSupport(Class<T> clazz) {
+        CouchDbRepositorySupport dbSupport = null;
+        try {
+            dbSupport = new PersistenceSupportFactory().getDBSupport(clazz);
+        } catch (ClassNotFoundException |NoSuchMethodException |
+                IllegalAccessException | InvocationTargetException |
+                InstantiationException e) {
+            throw new PersistenceException(e);
+        }
+        return dbSupport;
     }
 }

@@ -55,15 +55,15 @@ public class ConnectionManager {
     private final Map<Class, CouchDbConnector> CONNECTORS = new HashMap<>();
 
     /**
-     *
-     * @return
+     * returns a database instance
+     * @return a CouchDbInstance instance
      */
     protected CouchDbInstance getDbInstance() {
         return Holder.dbInstance;
     }
 
     /**
-     *
+     * If a connector instance for the support class
      * @param clazz
      * @return
      */

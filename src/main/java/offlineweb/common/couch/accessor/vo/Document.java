@@ -47,6 +47,9 @@ public class Document extends CouchDbDocument {
     @JsonProperty(value = "title", required = true)
     private String title;           /* unique job id, UUID, generated, required */
 
+    @JsonProperty("abstract")
+    private String docAbstract;     /* abstract of the socument*/
+
     @JsonProperty(value = "source", required = true)
     private DocumentSource source;   /* source of document, required */
 
@@ -73,6 +76,14 @@ public class Document extends CouchDbDocument {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDocAbstract() {
+        return docAbstract;
+    }
+
+    public void setDocAbstract(String docAbstract) {
+        this.docAbstract = docAbstract;
     }
 
     public DocumentSource getSource() {
