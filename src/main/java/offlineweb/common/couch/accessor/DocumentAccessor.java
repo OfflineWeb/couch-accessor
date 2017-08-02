@@ -43,6 +43,11 @@ import java.util.*;
  */
 @Loggable
 public class DocumentAccessor {
+
+    /**
+     * creates a 'document' database if does not exist
+     * @throws IOException throws exception if database creation fails
+     */
     public void createDocumentDb() throws IOException {
 
         Map<String, Object> dbStatus =
@@ -59,12 +64,23 @@ public class DocumentAccessor {
         }
     }
 
+    /**
+     * finds a document with specified document id
+     * @param docId unique document id, UUID string
+     * @return a document associated with the document id
+     * @throws IOException throws when there is no such document id
+     */
     public Document findById(String docId) throws IOException {
         Document document = RESTClient.get(CouchConfig.getCouchURL(),
                 Arrays.asList("document", docId));
         return document;
     }
 
+    /**
+     * returns all documents
+     * @return a list of documents
+     * @throws IOException throws when query fails
+     */
     public List<Document> getAll() throws IOException {
         List<Document> documents = RESTClient.get(CouchConfig.getCouchURL(),
                 Arrays.asList("document", "_all_docs"));
