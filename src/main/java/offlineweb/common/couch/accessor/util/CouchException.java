@@ -27,7 +27,7 @@ package offlineweb.common.couch.accessor.util;
 
 /**
  * @author papa
- *         created on 7/30/17.
+ * created on 7/30/17.
  */
 public class CouchException extends RuntimeException {
 

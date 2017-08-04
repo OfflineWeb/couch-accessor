@@ -27,14 +27,14 @@ package offlineweb.common.couch.accessor.util;
 
 /**
  * @author papa
- *         created on 7/29/17.
+ * created on 7/29/17.
  */
 
 public class CouchConfig {
 
     private static String couchURL = null;
     protected static void loadCouchConfig() {
-        // implement later
+        // TODO: implement later
     }
 
     public static String getCouchURL() {
