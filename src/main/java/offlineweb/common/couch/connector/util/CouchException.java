@@ -23,24 +23,35 @@
  *
  */
 
-package offlineweb.common.couch.accessor.util;
+package offlineweb.common.couch.connector.util;
 
 /**
  * @author papa
- * created on 7/29/17.
+ * created on 7/30/17.
  */
+public class CouchException extends RuntimeException {
 
-public class CouchConfig {
-
-    private static String couchURL = null;
-    protected static void loadCouchConfig() {
-        // TODO: implement later
+    public CouchException() {
     }
 
-    public static String getCouchURL() {
-        if (couchURL == null) {
-            couchURL = "http://192.168.0.7:5984";
-        }
-        return couchURL;
+    public CouchException(String message) {
+        super(message);
+    }
+
+    public CouchException(Object message) {
+        super(message.toString());
+    }
+
+    public CouchException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public CouchException(Throwable cause) {
+        super(cause);
+    }
+
+    public CouchException(String message, Throwable cause,
+                          boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
 }

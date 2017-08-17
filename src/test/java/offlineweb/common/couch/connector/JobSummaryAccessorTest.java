@@ -23,7 +23,7 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.connector;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

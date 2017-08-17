@@ -24,10 +24,10 @@
  *
  */
 
-package offlineweb.common.couch.accessor;
+package offlineweb.common.couch.connector;
 
-import offlineweb.common.couch.accessor.util.CouchConfig;
-import offlineweb.common.couch.accessor.util.CouchException;
+import offlineweb.common.couch.connector.util.CouchConfig;
+import offlineweb.common.couch.connector.util.CouchException;
 import offlineweb.common.logger.annotations.Loggable;
 import offlineweb.common.restconnector.RESTClient;
 import offlineweb.common.sharedobject.po.Attachment;
